@@ -10,7 +10,8 @@ namespace FortuneTeller
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to the Fortune Teller! Enter the below information to know your future.");
+            //Part 1 - asking for user input
+            Console.WriteLine("Welcome to the Fortune Teller! Enter the below information to learn your future.");
 
             Console.WriteLine("What is your first name?");
             string firstName = Console.ReadLine();
@@ -34,70 +35,80 @@ namespace FortuneTeller
             Console.WriteLine("How many siblings do you have?");
             int siblings = int.Parse(Console.ReadLine());
 
+            //Part 2 - calculations on user input
+            //Declare variables
+            int retirement;
+            string vacation;
+            string transportation;
+            double funds;
 
+            //Values of variables determined based upon conditionals
             if (age % 2 == 0)
             {
-                int retirement = 10;
+                retirement = 10;
             }
             else
             {
-                int retirement = 5;
+                retirement = 5;
             }
 
             if (siblings == 0)
             {
-                string vacation = "Tahiti";
+                vacation = "Tahiti";
             }
             else if (siblings == 1)
             {
-                string vacation = "Tuscany";
+                vacation = "Tuscany";
             }
             else if (siblings == 2)
             {
-                string vacation = "Thailand";
+                vacation = "Thailand";
             }
             else if (siblings >= 3)
             {
-                string vacation = "Zanzibar";
+                vacation = "Zanzibar";
             }
             else
             {
-                string vacation = "refrigertor box";
+                vacation = "a refrigertor box";
             }
 
             if (color == "red" || color == "violet")
             {
-                string transportation = "sailboat";
+                transportation = "sailboat";
             }
             else if (color == "orange" || color == "blue")
             {
-                string transportation = "Ferrari";
+                transportation = "Ferrari";
             }
             else if (color == "yellow" || color == "green")
             {
-                string transportation = "stagecoach";
+                transportation = "stagecoach";
             }
             else
             {
-                string transportation = "Lear jet";
+                transportation = "Lear jet";
             }
 
             if (birthMonth >=1 && birthMonth <= 4)
             {
-                double funds = 100d;
+                funds = 100d;
             }
             else if (birthMonth >=5 && birthMonth <=8)
             {
-                double funds = 50000d;
+                funds = 50000d;
             }
             else if (birthMonth >=9 && birthMonth <=12)
             {
-                double funds = 9000d;
+                funds = 9000d;
             }
             else
             {
-                double funds = 0.00d;
+                funds = 0.00d;
             }
+
+            //Part 3 - display fortune based upon above calculations
+            Console.WriteLine(firstName + " " + lastName + " will retire in " + retirement + " years with $" + funds + " in the bank, a vacation home in " + vacation + ", and a " + transportation + ".");
         }
     }
 }
